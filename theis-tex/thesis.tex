@@ -1,0 +1,63 @@
+\documentclass[a4paper,12pt]{report}
+
+%设置编译时只检查语法，而不生成dvi文件
+%这样速度会很快
+%\usepackage{syntonly}
+%\syntaxonly
+
+\input{setup/package}
+
+\begin{document}
+
+%定义所有的eps文件在 figures 子目录下
+\graphicspath{{figures/}}
+
+\begin{CJK}{UTF8}{song}
+
+\input{setup/format}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 封面
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{preface/cover}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 摘要
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{preface/c_abstract}
+\include{preface/e_abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 在这里加入目录
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%设置页码样式为Roman（大写罗马数字）
+\pagenumbering{Roman}
+\tableofcontents
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 论文正文
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%设置页码样式为arabic（阿拉伯数字）
+\pagenumbering{arabic}
+\include{body/gaishu}
+\include{body/huanjing}
+\include{body/xuqiu}
+\include{body/sheji}
+\include{body/kaifa}
+\include{body/yunxing}
+\include{body/jielun}
+%参考文献
+\include{reference/reference}
+%致谢
+\include{body/zhixie}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 附录
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{附录}
+\subsection{英文原文}
+\subsection{中文翻译}
+\subsection{主要源代码}
+
+\end{CJK}
+\end{document}
